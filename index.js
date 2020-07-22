@@ -1,6 +1,11 @@
 const mysql = require('mysql');
 const express = require('express');
 var app= express();
+const port = process.env.PORT || 3000;
+app.listen(port,()=>{
+    console.log("Express server is running at port no : ${port}")
+});
+
 const cors = require('cors'); 
 const bodyparser = require('body-parser');
 
@@ -227,7 +232,7 @@ app.get('/orderhistory/:CustomerID',(req, res)=>{
 });
 
 
-app.listen(3000,()=>console.log("Express server is running at port no : 3000"));
+
 // connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 //   if (error) throw error;
 //   console.log('The solution is: ', results[0].solution);
